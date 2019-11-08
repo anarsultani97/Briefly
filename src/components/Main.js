@@ -2,14 +2,12 @@ import React from 'react'
 
 
 class Main extends React.Component {
-
-
     render() {
         return (
             <section className="main">
                 <div className="container ">
                     <div className="row align-items-center ">
-                        <div className=" col-lg-8 offset-md-2 col-sm-12 col-xs-12 text-center">
+                        <div className="col-lg-8 offset-md-2 col-sm-8 col-xs-8 text-center">
                             <input type="file" id="upload_file" hidden="hidden" ref={this.realFileBtn}
                                    onChange={this.ShowUploadFileName}/>
                             <button type="button" id="upload_button" className='btn--animated' ref={this.customBtn}
