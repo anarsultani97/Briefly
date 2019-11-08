@@ -2,26 +2,30 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/Navbar'
-import logo from "./images/briefly-logo3.svg"
-import headerImg from "./images/homepage-bgpic.jpg"
+import Navbar from './components/Navbar';
+import logo from "./images/briefly-logo3.svg";
 import Header from "./components/Header";
+import Main from "./components/Main"
+import Footer from './components/Footer'
 
 // Creating a react component
 
-const image  = {
+const image = {
     imgURL: logo,
-    imgHeader: headerImg
 }
 const App = () => {
     return <div>
         <Navbar img={image}/>
-        <Header />
+        <Header/>
+        <Main/>
+        <Footer/>
+
+
     </div>
 };
 
 ReactDOM.render(
-    <App />,
+    <App/>,
     document.getElementById('root')
 );
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import  '../style/style.css';
-
+import '../style/style.css';
 
 const Navbar = props => {
     return (
@@ -8,7 +7,7 @@ const Navbar = props => {
             <nav class="navbar navbar-expand-lg py-3 navbar-light bg-light shadow-lg">
                 <div class="container">
                     <a href="#" class="navbar-brand">
-                        <img src={props.img.imgURL}  width={'100px'} />
+                        <img src={props.img.imgURL} width={'100px'}/>
                     </a>
 
                     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -27,7 +26,7 @@ const Navbar = props => {
                 </div>
             </nav>
         </div>
-            );
-        };
+    );
+};
 
 export default Navbar;
