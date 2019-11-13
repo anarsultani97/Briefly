@@ -18,7 +18,7 @@ const Navbar = props => {
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active"><a href="#" class="nav-link">Home <span
                                 class="sr-only">(current)</span></a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
                         </ul>

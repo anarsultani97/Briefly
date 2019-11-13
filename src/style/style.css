@@ -3,7 +3,7 @@
     background-image: linear-gradient(0deg, #312395, #005393);
     color: #fffff7;
     box-shadow: inset 0px -2px 20px -10px #333;
-    height: 40vh;
+
     vertical-align: middle;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
@@ -21,7 +21,6 @@
     margin-top: 3.5rem;
     border-radius: 2.5em;
     transition: all .2s ease-out;
-    position: relative;
     z-index: 99;
     font-size: 1rem;
     border: none;
@@ -44,12 +43,16 @@
     background-color: forestgreen;
     color: #d6d6d6;
 }
+.btn--blue {
+    background-color: #094f9b ;
+    color: #d6d6d6;
+}
 
 .btn--white {
     background: #ffffff;
     color: #1e1e1e;
-
 }
+
 
 .btn--animated {
     animation: moveToUp .5s ease-out .5s;
@@ -59,8 +62,6 @@
 .jumbotron .lead > a {
     margin-top: 3rem;
     text-transform: uppercase;
-
-
 }
 
 .jumbotron .lead > a:after {
@@ -94,8 +95,11 @@
     padding: .75rem .75rem;
 }
 
+html { 
+    scroll-behavior: smooth; 
+}
 body {
-    background: linear-gradient(70deg, #cfcfcf, #c6d6d0);
+    background: linear-gradient(75deg,  rgba(204, 220, 231, 0.801), #d3d5ff4d);
     color: #514B64;
     min-height: 100vh;
     font-weight: 400;
@@ -133,15 +137,45 @@ body {
     color: #8e8e8e;
 }
 
+/* Contact style  */
+
+
+.contact-form{
+    background: #fff;
+    margin-top: 1rem;
+    width: 100%;
+}
+.contact-form .form-control{
+    border-radius: .2rem;
+}
+/* .contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+} */
+.contact-form form{
+    padding: 10%;
+}
+
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -5%;
+    text-align: center;
+    color: #0062cc;
+}
+/* End of Contact style */
+
 @media only screen and (max-width: 720px) {
     .jumbotron h2 {
         line-height: 1.25;
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     .jumbotron {
-        
         height: 35vh;
-        
         }
     
 }

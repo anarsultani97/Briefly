@@ -3,7 +3,7 @@ import React from 'react';
 const Header = props => {
     return (
         <div className="jumbotron jumbotron-fluid ">
-            <div className="container ">
+            <div className="container">
                 <div className="row">
                     <div className='col-sm-12 col-md-8 offset-md-2 col-xs-12 text-center'>
                         <h2 className="display-4"><b>Summarize your articles.
