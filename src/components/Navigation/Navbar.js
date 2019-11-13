@@ -1,6 +1,6 @@
 import React from 'react';
-import '../style/style.css';
-
+import './nav.css' ;
+import '../../style/style.css'
 const Navbar = props => {
     return (
         <div>

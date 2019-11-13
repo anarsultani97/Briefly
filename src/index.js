@@ -2,12 +2,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navigation/Navbar.js';
 import logo from "./images/briefly-logo3.svg";
-import Header from "./components/Header";
-import Main from "./components/Main"
-import Footer from './components/Footer'
-import Contact from './components/Contact'
+import Header from "./components/Header/Header.js";
+import Main from "./components/Main/Main.js"
+import Footer from './components/Footer/Footer.js'
+import Contact from './components/Contact/Contact.js'
 
 // Creating a react component
 

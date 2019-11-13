@@ -1,0 +1,44 @@
+
+.jumbotron {
+    background-image: linear-gradient(0deg, #312395, #005393);
+    color: #fffff7;
+    box-shadow: inset 0px -2px 20px -10px #333;
+
+    vertical-align: middle;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+}
+
+.jumbotron h2 {
+    line-height: 1;
+    font-size: 2rem;
+}
+.jumbotron .lead > a {
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+.jumbotron .lead > a:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.25s ease;
+
+}
+
+
+@media only screen and (max-width: 720px) {
+    .jumbotron h2 {
+        line-height: 1.25;
+        font-size: 1.7rem;
+    }
+    .jumbotron {
+        height: 35vh;
+        }
+    
+}
