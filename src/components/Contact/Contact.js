@@ -1,31 +1,68 @@
 import React from 'react';
 import './contact.css'
 
+
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            message: '' ,
+            contact: ''
+        }
+    }
+    handleNameChange = (event) => {
+        this.setState({
+         name: event.target.value
+        })
+    };
+    handleEmailChange = (event) => {
+        this.setState( {
+            email : event.target.value
+
+    })
+    };
+    handleMessageChange = (event) => {
+        this.setState({
+            message: event.target.value
+        })
+    };
+
+    handleContactChange = (event) => {
+        this.setState({
+            contact: event.target.value
+        })
+    };
+
+
+
+    handleSubmit = (event) => {
+     //   console.log("Message was submitted : "  + this.state.name + "," + this.state.email +  "," +this.state.contact + ","+ this.state.message)
+    event.preventDefault();
+    };
+
     render() {
         return (
             <section id='contact'>
                 <div className="container-fluid contact-form">
-                    {/* <div className="contact-image">
-                    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
-                </div> */}
-                    <form method="post">
+                    <form onSubmit={this.handleSubmit}>
                         <h3>Contact Us</h3>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input type="text" name="txtName" className="form-control" placeholder="Name *" />
+                                    <input required type="text" name="name" className="form-control" onChange={this.handleNameChange}  value={this.state.name} placeholder="Name *" />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" name="txtEmail" className="form-control" placeholder="Email *" />
+                                    <input required type="email" name="email"  value={this.state.email} className="form-control"  onChange={this.handleEmailChange} placeholder="Email *" />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" name="txtPhone" className="form-control" placeholder="Phone Number *" />
+                                    <input  type="text" name="contact"   className="form-control" value={this.state.contact} onChange={this.handleContactChange}  placeholder="Phone Number" />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <textarea name="txtMsg" className="form-control" placeholder="Message *" style={{ height: '150px' }}></textarea>
+                                    <textarea name="message" required className="form-control"  value={this.state.message} onChange={this.handleMessageChange} placeholder="Message *" style={{ height: '150px' }} />
                                 </div>
                             </div>
                             <div className='container'>

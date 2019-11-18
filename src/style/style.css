@@ -1,6 +1,6 @@
 
 .btn, .btn:link, .btn:visited {
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
     padding: .5rem 1.5rem;
     display: inline-block;
@@ -27,7 +27,7 @@
 
 .btn--green {
     background-color: forestgreen;
-    color: #d6d6d6;
+    color: #ffffff;
 }
 .btn--blue {
     background-color: #094f9b ;
@@ -35,18 +35,16 @@
 }
 
 .btn--white {
-    background: #ffffff;
+    background: #fffff7;
     color: #1e1e1e;
+    font-family: Calibri!important;
+
 }
-
-
 .btn--animated {
     animation: moveToUp .5s ease-out .5s;
     animation-fill-mode: backwards;
 }
 /* End  Button styles   */
-
-
 html { 
     scroll-behavior: smooth; 
 }
