@@ -1,4 +1,4 @@
-package com.sars.briefly.api.briefly.api;
+package com.sars.briefly.api.briefly.api.summary;
 
 import java.util.ArrayList;
 

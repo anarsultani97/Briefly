@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sars.briefly.api.briefly.api.summary.SummaryTool;
+
 @RestController
 @RequestMapping("/api/data")
 public class TextController {
