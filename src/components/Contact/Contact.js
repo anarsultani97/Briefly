@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import './contact.css'
 
 
@@ -12,6 +13,7 @@ class Contact extends React.Component {
             contact: ''
         }
     }
+
     handleNameChange = (event) => {
         this.setState({
          name: event.target.value
@@ -20,7 +22,6 @@ class Contact extends React.Component {
     handleEmailChange = (event) => {
         this.setState( {
             email : event.target.value
-
     })
     };
     handleMessageChange = (event) => {
@@ -38,15 +39,16 @@ class Contact extends React.Component {
 
 
     handleSubmit = (event) => {
-     //   console.log("Message was submitted : "  + this.state.name + "," + this.state.email +  "," +this.state.contact + ","+ this.state.message)
-    event.preventDefault();
+       event.preventDefault();
+
     };
 
     render() {
         return (
             <section id='contact'>
                 <div className="container-fluid contact-form">
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}  >
+                        
                         <h3>Contact Us</h3>
                         <div className="row">
                             <div className="col-md-6">
