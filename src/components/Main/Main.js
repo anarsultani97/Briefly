@@ -1,5 +1,7 @@
 import React from 'react';
 import './main.css';
+import axios from "axios";
+import Respond from "../Respond/Respond";
 
 
 class Main extends React.Component {
@@ -17,10 +19,37 @@ class Main extends React.Component {
         this.message =
             React.createRef();
         this.state = {
-            message : ''
+            message : '',
+            data: "" ,
+            obj: {},
+            summarizeClicked: false
         }
     }
 
+
+    handleSubmit = async (event) => {
+        event.preventDefault();
+
+            this.setState(
+                {
+                    summarizeClicked : true
+                }
+            )
+        const  textObj = {
+            text : this.state.message
+        };
+         await axios.post('http://localhost:8080/api/data', textObj)
+            .then(res=> {
+                console.log(res.data)
+                this.setState({
+                    obj: res.data,
+                    data: res.data.text
+                })
+            });
+
+        console.log(this.state.data)
+
+    }
 
 
     UploadClick = () => {
@@ -29,40 +58,41 @@ class Main extends React.Component {
     };
 
 
-    ShowUploadFileName = async (event) => {
-        const realFileBtn = this.realFileBtn.current;
-        const customTxt = this.customTxt.current;
-        const fileName = event.target.files[0].name;
+        ShowUploadFileName = async (event) => {
+            const realFileBtn = this.realFileBtn.current;
+            const customTxt = this.customTxt.current;
+            const fileName = event.target.files[0].name;
 
-        let file = event.target.files[0];
+            let file = event.target.files[0];
 
-        let reader = new FileReader();
-        //reading uploaded file text
-        let  data = reader.readAsText(file);
+            let reader = new FileReader();
+            //reading uploaded file text
+            let data = reader.readAsText(file);
 
-        reader.onload = (event) => {
-            this.setState({
-                message: event.target.result
-            })
-        }
+            reader.onload = (event) => {
+                this.setState({
+                    message: event.target.result,
+                    data: event.target.result
+                })
+            }
 
 
-        if (realFileBtn.value) {
-            //displaying filenName
+            if (realFileBtn.value) {
+                //display file name
 
-            /*customTxt.innerHTML = realFileBtn.value.match(
-                /[\/\\]([\w\d\s\.\-\(\)]+)$/
-            )[1];*/
+                customTxt.innerHTML = fileName;
 
-            customTxt.innerHTML = fileName;
+            } else {
+                customTxt.innerHTML = "No file chosen, yet.";
+            }
+        };
 
-        } else {
-            customTxt.innerHTML = "No file chosen, yet.";
-        }
-    };
+
+
     textChangeHandler  = (event) =>{
         this.setState({
-            message: event.target.value
+            message: event.target.value,
+            data: event.target.value
         })
     }
 
@@ -84,14 +114,27 @@ class Main extends React.Component {
                     </div>
                     <div className="row justify-content-md-center text-center my-5">
                         <div className="col-lg-8">
+                            <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
+                                {
+                                    this.state.summarizeClicked ?
+                                    <Respond
+                                     rate = {this.state.obj.compressionRate}
+                                     words = {this.state.obj.nofWordsSummary}
+                                     paragraph = {this.state.obj.nofParagraphSummary}
+                                    />
+                                    :
+                                        <div></div>
+
+                                }
                                 <textarea placeholder='Summerize your text' name="summarize"
-                                          className='form-control rounded-lg' rows={15} id="textArea" ref={this.message}  onChange={this.textChangeHandler} value={this.state.message} />
+                                          className='form-control rounded-lg' rows={15} id="textArea" ref={this.message}  onChange={this.textChangeHandler} value={this.state.data} />
                                 <button type='submit' className="btn btn-lg btn-outline-light btn--green btn--animated"
                                         href="#"
                                         role="button">Summarize
                                 </button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -99,7 +142,6 @@ class Main extends React.Component {
         )
 
     }
-
 
 }
 

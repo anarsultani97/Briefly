@@ -4,13 +4,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
 import com.sars.briefly.api.briefly.api.summary.SummaryTool;
 
+=======
+@CrossOrigin (origins = "*")
+>>>>>>> 41d3ef0b86e1bfa5898092884b620517619e77fe
 @RestController
 @RequestMapping("/api/data")
 public class TextController {
