@@ -211,10 +211,10 @@ public class SummaryTool {
 	
 	public void finalizeSummary() {
 		compressionRate = getWordCount(contentSummary) / getWordCount(sentences) * 100;
-		for(Sentence sentence : contentSummary){
+		/*for(Sentence sentence : contentSummary){
 			System.out.println(sentence.value);
 			summaryText = summaryText + sentence.value;
-		}
+		}*/
 		System.out.println("1 -> ");
 		System.out.println(summaryText);
 		nOfWordsSummary = getWordCount(contentSummary);
