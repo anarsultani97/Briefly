@@ -4,18 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-<<<<<<< HEAD
 import com.sars.briefly.api.briefly.api.summary.SummaryTool;
 
-=======
-@CrossOrigin (origins = "*")
->>>>>>> 41d3ef0b86e1bfa5898092884b620517619e77fe
 @RestController
 @RequestMapping("/api/data")
 public class TextController {
@@ -24,7 +18,7 @@ public class TextController {
 	public ResponseEntity<InputData> create(@RequestBody InputData newData){
 		System.out.println(newData.getText());
 		System.out.println("-------------------------------");
-		System.out.println(newData.getText().replace("\\n", "\n"));
+		System.out.println(newData.getText());
 		
 		String directory = System.getProperty("user.dir");
 		String fileName = "sum.txt";
@@ -32,8 +26,11 @@ public class TextController {
 
 		// write the content in file 
 		try(FileWriter fileWriter = new FileWriter(absolutePath)) {
-		    String fileContent = newData.getText().replace("\\n", "\n");
+			String fileClearer = "";
+			fileWriter.write(fileClearer);
+		    String fileContent = newData.getText();
 		    fileWriter.write(fileContent);
+		    newData.setText("");
 		} catch (IOException e) {
 		    // exception handling
 		}
@@ -61,7 +58,10 @@ public class TextController {
 		summary.finalizeSummary();
 		newData.setCompressionRate(String.format("%.0f", summary.compressionRate) + "%");
 		newData.setNOfWordsSummary(summary.nOfWordsSummary);
+		System.out.println("ANSWER:");
+		System.out.println(newData.getText());
 		newData.setText(summary.summaryText);
+		System.out.println(newData.getText());
 		newData.setNOfParagraphSummary(summary.nOfParagraphsSummary);
 		
 		return ResponseEntity.ok(newData);
