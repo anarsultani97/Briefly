@@ -1,4 +1,4 @@
-package com.sars.briefly.api.briefly.api;
+package com.sars.briefly.api.briefly.api.summary;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,19 +19,19 @@ public class SummaryTool {
 
 	double[][] intersectionMatrix;
 	LinkedHashMap<Sentence,Double> dictionary;
-	double compressionRate;
-	String summaryText = "";
-	double nOfWordsSummary;
-	int nOfParagraphsSummary;
+	public double compressionRate;
+	public String summaryText = "";
+	public double nOfWordsSummary;
+	public int nOfParagraphsSummary;
 	
-	SummaryTool(){
+	public SummaryTool(){
 		in = null;
 		//out = null;
 		noOfSentences = 0;
 		noOfParagraphs = 0;
 	}
 	
-	void init(){
+	public void init(){
 		sentences = new ArrayList<Sentence>();
 		paragraphs = new ArrayList<Paragraph>();
 		contentSummary = new ArrayList<Sentence>();
@@ -46,7 +46,7 @@ public class SummaryTool {
     	}
 	}
 	
-	void extractSentenceFromContext(){
+	public void extractSentenceFromContext(){
 		int nextChar,j=0;
 		int prevChar = -1;
         try{
@@ -77,7 +77,7 @@ public class SummaryTool {
 	}
 	
 	
-	void groupSentencesIntoParagraphs(){
+	public void groupSentencesIntoParagraphs(){
 		int paraNum = 0;
 		Paragraph paragraph = new Paragraph(0);
 
@@ -96,7 +96,7 @@ public class SummaryTool {
 		paragraphs.add(paragraph);
 	}
 
-	double noOfCommonWords(Sentence str1, Sentence str2){
+	public double noOfCommonWords(Sentence str1, Sentence str2){
 		double commonCount = 0;
 
 		for(String str1Word : str1.value.split("\\s+")){
@@ -110,7 +110,7 @@ public class SummaryTool {
 		return commonCount;
 	}
 
-	void createIntersectionMatrix(){
+	public void createIntersectionMatrix(){
 		intersectionMatrix = new double[noOfSentences][noOfSentences];
 		for(int i=0;i<noOfSentences;i++){
 			for(int j=0;j<noOfSentences;j++){
@@ -127,7 +127,7 @@ public class SummaryTool {
 		}
 	}
 
-	void createDictionary(){
+	public void createDictionary(){
 		for(int i=0;i<noOfSentences;i++){
 			double score = 0;
 			for(int j=0;j<noOfSentences;j++){
@@ -138,7 +138,7 @@ public class SummaryTool {
 		}
 	}
 
-	void createSummary(){
+	public void createSummary(){
 
 	      for(int j=0;j<=noOfParagraphs;j++){
 	      		int primary_set = paragraphs.get(j).sentences.size()/5; 
@@ -156,7 +156,7 @@ public class SummaryTool {
 	}
 
 
-	void printSentences(){
+	public void printSentences(){
 		for(Sentence sentence : sentences){
 			System.out.println(sentence.number + " => " 
 					+ sentence.value + " => " + sentence.stringLength  
@@ -164,7 +164,7 @@ public class SummaryTool {
 		}
 	}
 
-	void printIntersectionMatrix(){
+	public void printIntersectionMatrix(){
 		for(int i=0;i<noOfSentences;i++){
 			for(int j=0;j<noOfSentences;j++){
 				System.out.print(intersectionMatrix[i][j] + "    ");
@@ -173,7 +173,7 @@ public class SummaryTool {
 		}
 	}
 
-	void printDicationary(){
+	public void printDicationary(){
 		  // Get a set of the entries
 	      Set set = dictionary.entrySet();
 	      // Get an iterator
@@ -186,7 +186,7 @@ public class SummaryTool {
 	      }
 	}
 
-	void printSummary(){
+	public void printSummary(){
 		System.out.println("no of paragraphs = "+ noOfParagraphs);
 		for(Sentence sentence : contentSummary){
 			System.out.println(sentence.value);
@@ -194,7 +194,7 @@ public class SummaryTool {
 		}
 	}
 
-	double getWordCount(ArrayList<Sentence> sentenceList){
+	public double getWordCount(ArrayList<Sentence> sentenceList){
 		double wordCount = 0.0;
 		for(Sentence sentence:sentenceList){
 			wordCount +=(sentence.value.split(" ")).length;
@@ -202,13 +202,13 @@ public class SummaryTool {
 		return wordCount;
 	}
 
-	void printStats(){
+	public void printStats(){
 		System.out.println("number of words in Context : " + getWordCount(sentences));
 		System.out.println("number of words in Summary : " + getWordCount(contentSummary));
 		System.out.println("Commpression : " + getWordCount(contentSummary) / getWordCount(sentences) );
 	}
 	
-	void finalizeSummary() {
+	public void finalizeSummary() {
 		compressionRate = getWordCount(contentSummary) / getWordCount(sentences) * 100;
 		for(Sentence sentence : contentSummary){
 			System.out.println(sentence.value);
