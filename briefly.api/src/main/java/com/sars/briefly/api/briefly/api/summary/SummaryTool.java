@@ -32,6 +32,7 @@ public class SummaryTool {
 	}
 	
 	public void init(){
+		summaryText = "";
 		sentences = new ArrayList<Sentence>();
 		paragraphs = new ArrayList<Paragraph>();
 		contentSummary = new ArrayList<Sentence>();
@@ -210,16 +211,14 @@ public class SummaryTool {
 	
 	public void finalizeSummary() {
 		compressionRate = getWordCount(contentSummary) / getWordCount(sentences) * 100;
-		for(Sentence sentence : contentSummary){
-			System.out.println(sentence.value);
-			summaryText = summaryText + sentence.value;
-		}
+		System.out.println("1 -> ");
+		System.out.println(summaryText);
 		nOfWordsSummary = getWordCount(contentSummary);
 		/*if(noOfParagraphs == 0) {
 			nOfParagraphsSummary = 1;
 		}
-		else*/
-			nOfParagraphsSummary = noOfParagraphs;
+		else
+			nOfParagraphsSummary = noOfParagraphs;*/
 	}
 	
 }
