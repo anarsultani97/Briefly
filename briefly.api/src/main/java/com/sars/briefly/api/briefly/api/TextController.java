@@ -53,7 +53,7 @@ public class TextController {
 		//summary.printDicationary();
 		System.out.println("SUMMMARY");
 		summary.createSummary();
-		summary.printSummary();
+		//summary.printSummary();
 		summary.printStats();
 		summary.finalizeSummary();
 		newData.setCompressionRate(String.format("%.0f", summary.compressionRate) + "%");
