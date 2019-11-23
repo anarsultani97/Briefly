@@ -7,6 +7,7 @@ const Footer = () => {
             <div class="footer-copyright text-center py-4">
                 © 2019 <b>Briefly</b>
             </div>
+            //Creating Footer with React
         </footer>
     )
 }
