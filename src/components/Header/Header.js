@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css' ;
 const Header = props => {
     return (
-        <div className="jumbotron jumbotron-fluid ">
+        <div className="jumbotron jumbotron-fluid "> //Creating Header using React
             <div className="container">
                 <div className="row">
                     <div className='col-sm-12 col-md-8 offset-md-2 col-xs-12 text-center'>
@@ -17,7 +17,7 @@ const Header = props => {
                 </div>
             </div>
         </div>
-    );
+    ); 
 };
 export default Header;
 

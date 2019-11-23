@@ -44,6 +44,7 @@ class Contact extends React.Component {
     };
 
     render() {
+        //using React to create contact part
         return (
             <section id='contact'>
                 <div className="container-fluid contact-form">
