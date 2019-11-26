@@ -190,7 +190,7 @@ public class SummaryTool {
 	public void printSummary(){
 		System.out.println("no of paragraphs = "+ noOfParagraphs);
 		for(Sentence sentence : contentSummary){
-			System.out.println(sentence.value);
+			//System.out.println(sentence.value);
 			summaryText = summaryText + sentence.value;
 		}
 	}
@@ -204,9 +204,9 @@ public class SummaryTool {
 	}
 
 	public void printStats(){
-		System.out.println("number of words in Context : " + getWordCount(sentences));
-		System.out.println("number of words in Summary : " + getWordCount(contentSummary));
-		System.out.println("Commpression : " + getWordCount(contentSummary) / getWordCount(sentences) );
+		//System.out.println("number of words in Context : " + getWordCount(sentences));
+		//System.out.println("number of words in Summary : " + getWordCount(contentSummary));
+		//System.out.println("Commpression : " + getWordCount(contentSummary) / getWordCount(sentences) );
 	}
 	
 	public void finalizeSummary() {
@@ -215,8 +215,8 @@ public class SummaryTool {
 			System.out.println(sentence.value);
 			summaryText = summaryText + sentence.value;
 		}*/
-		System.out.println("1 -> ");
-		System.out.println(summaryText);
+		//System.out.println("1 -> ");
+		//System.out.println(summaryText);
 		nOfWordsSummary = getWordCount(contentSummary);
 		/*if(noOfParagraphs == 0) {
 			nOfParagraphsSummary = 1;

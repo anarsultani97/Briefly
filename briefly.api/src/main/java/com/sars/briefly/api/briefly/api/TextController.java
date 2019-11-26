@@ -20,7 +20,7 @@ public class TextController {
 	public ResponseEntity<InputData> create(@RequestBody InputData newData){
 		System.out.println(newData.getText());
 		System.out.println("-------------------------------");
-		System.out.println(newData.getText());
+		System.out.println(newData.getText().replace("\\n", "\n"));
 		
 		String directory = System.getProperty("user.dir");
 		String fileName = "sum.txt";
