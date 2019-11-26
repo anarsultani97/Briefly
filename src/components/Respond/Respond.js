@@ -12,11 +12,9 @@ const  Respond =  (props) => {
                         <li className="item"> Compression rate : {props.rate}</li>
                         </div>
                         <div className="col-md-12">
-                        <li className="item"> Words in original text : {props.words}</li>
+                        <li className="item"> Words in summarized text: {props.words}</li>
                         </div>
-                        <div className="col-md-12">
-                            <li className="item"> Paragrahps in original text : {props.paragraph}</li>
-                        </div>
+
                     </ul>
                 </div>
             </div>

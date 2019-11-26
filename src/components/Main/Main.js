@@ -29,7 +29,6 @@ class Main extends React.Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-
             this.setState(
                 {
                     summarizeClicked : true
@@ -121,7 +120,7 @@ class Main extends React.Component {
                                     <Respond
                                      rate = {this.state.obj.compressionRate}
                                      words = {this.state.obj.nofWordsSummary}
-                                     paragraph = {this.state.obj.nofParagraphSummary}
+                                     /* paragraph = {this.state.obj.nofParagraphSummary} */
                                     />
                                     :
                                         <div></div>

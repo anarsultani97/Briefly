@@ -7,18 +7,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import com.sars.briefly.api.briefly.api.summary.SummaryTool;
 
+@CrossOrigin (origins = "*")
 @RestController
 @RequestMapping("/api/data")
 public class TextController {
 	
 	@PostMapping("")
 	public ResponseEntity<InputData> create(@RequestBody InputData newData){
-		System.out.println(newData.getText());
+		//System.out.println(newData.getText());
 		System.out.println("-------------------------------");
-		System.out.println(newData.getText());
+		System.out.println(newData.getText().replace("\\n", "\n"));
 		
 		String directory = System.getProperty("user.dir");
 		String fileName = "sum.txt";
