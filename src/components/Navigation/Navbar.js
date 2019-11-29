@@ -4,7 +4,7 @@ import '../../style/style.css'
 const Navbar = props => {
     return (
         <div>
-            <nav class="navbar navbar-expand-lg py-3 navbar-light bg-light shadow-lg">
+            <nav class="navbar navbar-light navbar-expand-lg py-3 bg-light shadow-lg">
                 <div class="container">
                     <a href="#" class="navbar-brand">
                         <img src={props.img.imgURL} width={'100px'}/>
@@ -16,11 +16,11 @@ const Navbar = props => {
 
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active"><a href="#" class="nav-link">Home <span
+                            <li class="nav-item active"><a href="#header" class="nav-link">Home <span
                                 class="sr-only">(current)</span></a></li>
                             <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
                         </ul>
                     </div>
                 </div>
