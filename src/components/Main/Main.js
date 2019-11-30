@@ -126,7 +126,7 @@ class Main extends React.Component {
                                         <div></div>
 
                                 }
-                                <textarea placeholder='Summerize your text' name="summarize"
+                                <textarea placeholder='Summarize your text' name="summarize"
                                           className='form-control rounded-lg' rows={15} id="textArea" ref={this.message}  onChange={this.textChangeHandler} value={this.state.data} />
                                 <button type='submit' className="btn btn-lg btn-outline-light btn--green btn--animated"
                                         href="#"
