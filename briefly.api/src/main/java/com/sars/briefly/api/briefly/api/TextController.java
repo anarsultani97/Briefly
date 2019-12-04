@@ -61,7 +61,7 @@ public class TextController {
 		newData.setCompressionRate(String.format("%.0f", summary.compressionRate) + "%");
 		newData.setNOfWordsSummary(summary.nOfWordsSummary);
 		System.out.println("ANSWER:");
-		//System.out.println(newData.getText());
+		System.out.println(newData.getText());
 		newData.setText(summary.summaryText);
 		System.out.println(newData.getText());
 		newData.setNOfParagraphSummary(summary.nOfParagraphsSummary);
