@@ -30,7 +30,7 @@ public class SummaryTool {
 		noOfSentences = 0;
 		noOfParagraphs = 0;
 	}
-	
+	/*Initalization process, using FileInputStram reading the file from .txt file*/ 
 	public void init(){
 		summaryText = "";
 		sentences = new ArrayList<Sentence>();
@@ -46,7 +46,7 @@ public class SummaryTool {
     		e.printStackTrace();
     	}
 	}
-	
+	/*Simple hand built sentece extractor, get the sentences and store them in sentence*/
 	public void extractSentenceFromContext(){
 		int nextChar,j=0;
 		int prevChar = -1;
@@ -77,7 +77,7 @@ public class SummaryTool {
 
 	}
 	
-	
+	/*Grouping the sentences into the paragraphs*/	
 	public void groupSentencesIntoParagraphs(){
 		int paraNum = 0;
 		Paragraph paragraph = new Paragraph(0);
@@ -96,7 +96,7 @@ public class SummaryTool {
 
 		paragraphs.add(paragraph);
 	}
-
+	/*Finding the common words by comparing each sentence with all others*/
 	public double noOfCommonWords(Sentence str1, Sentence str2){
 		double commonCount = 0;
 
@@ -110,7 +110,7 @@ public class SummaryTool {
 
 		return commonCount;
 	}
-
+	/*Creation of intersaction matrix, in the dictionary key: Sentence value: Sum of intersection values with this sentence*/
 	public void createIntersectionMatrix(){
 		intersectionMatrix = new double[noOfSentences][noOfSentences];
 		for(int i=0;i<noOfSentences;i++){
@@ -138,7 +138,7 @@ public class SummaryTool {
 			((Sentence)sentences.get(i)).score = score;
 		}
 	}
-
+	/*Pull out the sentence with the highest value out of 5 of them, and place them in a chronological order with the help of the "number"*/
 	public void createSummary(){
 
 	      for(int j=0;j<=noOfParagraphs;j++){
