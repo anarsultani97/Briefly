@@ -1,6 +1,9 @@
 .result h4 {
     color : #1e7e34
 }
+.download{
+    text-transform: none!important;
+}
 
 .item {
     padding: 10px;
@@ -39,4 +42,8 @@
 }
 .inline-b-item {
     display: inline-block;
+}
+.download{
+    margin-bottom: 1rem;
+    margin-top: -.3rem;
 }

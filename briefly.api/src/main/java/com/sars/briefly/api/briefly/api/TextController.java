@@ -18,9 +18,9 @@ public class TextController {
 	
 	@PostMapping("")
 	public ResponseEntity<InputData> create(@RequestBody InputData newData){
-		System.out.println(newData.getText());
-		System.out.println("-------------------------------");
-		System.out.println(newData.getText());
+		//System.out.println(newData.getText());
+		//System.out.println("-------------------------------");
+		//System.out.println(newData.getText().replace("\\n", "\n"));
 		
 		String directory = System.getProperty("user.dir");
 		String fileName = "sum.txt";
@@ -53,7 +53,7 @@ public class TextController {
 
 		summary.createDictionary();
 		//summary.printDicationary();
-		System.out.println("SUMMMARY");
+		//System.out.println("SUMMMARY");
 		summary.createSummary();
 		summary.printSummary();
 		summary.printStats();
@@ -61,7 +61,7 @@ public class TextController {
 		newData.setCompressionRate(String.format("%.0f", summary.compressionRate) + "%");
 		newData.setNOfWordsSummary(summary.nOfWordsSummary);
 		System.out.println("ANSWER:");
-		System.out.println(newData.getText());
+		//System.out.println(newData.getText());
 		newData.setText(summary.summaryText);
 		System.out.println(newData.getText());
 		newData.setNOfParagraphSummary(summary.nOfParagraphsSummary);

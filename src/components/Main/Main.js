@@ -120,6 +120,7 @@ class Main extends React.Component {
                                     <Respond
                                      rate = {this.state.obj.compressionRate}
                                      words = {this.state.obj.nofWordsSummary}
+                                     summerized_text = {this.state.obj.text}
                                      /* paragraph = {this.state.obj.nofParagraphSummary} */
                                     />
                                     :
