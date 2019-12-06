@@ -9,6 +9,7 @@ import Main from "./components/Main/Main.js"
 import Footer from './components/Footer/Footer.js'
 import Contact from './components/Contact/Contact.js'
 import About from  './components/What_is_briefly/About_Briefly.js'
+import Services from "./components/Services/services";
 
 // Creating a react component
 
@@ -22,6 +23,7 @@ const App = () => {
         <Header/>
         <Main/>
         <About/>
+        <Services/>
         <Contact/>
         <Footer/>
     </div>

@@ -1,0 +1,71 @@
+.mb60 {
+    margin-bottom: 60px;
+}
+.mt40{
+    margin-top: 2rem;
+}
+.alt-xett{
+    color: #272731;
+}
+.alt-xett:after {
+    content: "";
+    display: block;
+    width: 48px;
+    border-bottom: 4px solid #111111;
+    margin: 15px auto 15px;
+}
+.alt-p {
+    font-family: Tahoma;
+    font-size: 16px;
+}
+.service-box {
+    background-color: #fff;
+    padding: 60px 40px;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+.icon-editing i {
+    color: #bfa67a;
+    border: 2px solid #bfa67a;
+    background-color: transparent;
+    transition: background .4s, color .4s;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.icon-editing i:hover {
+    background: #111111;
+    color: #fff;
+    border-color: transparent;
+}
+.service-box i {
+    font-size: 24px;
+    line-height: 70px;
+}
+.service-box h3 {
+    font-size: 15px;
+    margin-bottom: 21px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.icon-editing i:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: content-box;
+    top: -15px;
+    left: -15px;
+    padding: 15px;
+    box-shadow: 0 0 0 2px #111;
+    transform: scale(0.8);
+    transition: all .4s;
+}
+.bg-dark {
+    background-color: #242424;
+}

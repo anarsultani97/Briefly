@@ -5,7 +5,7 @@ import "./about_briefly.css"
 class About_Briefly extends React.Component{
     render() {
         return(
-          <section className='about-us' id='about-us'>
+          <section className='about-us' id='about'>
             <div className='container-fluid about-div'>
                 <div className='row'>
                     <div className="col-md-6 offset-md-3 col-xs-12 text-center">

@@ -19,8 +19,8 @@ const Navbar = props => {
                             <li className="nav-item active"><a href="#header" className="nav-link">Home <span
                                 className="sr-only">(current)</span></a></li>
                             <li className="nav-item"><a href="#contact" className="nav-link">Contact Us</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">Services</a></li>
-                            <li className="nav-item"><a href="#" className="nav-link">About us</a></li>
+                            <li className="nav-item"><a href="#about" className="nav-link">About us</a></li>
+                            <li className="nav-item"><a href="#services" className="nav-link">Who Is Briefly For ?</a></li>
                         </ul>
                     </div>
                 </div>
