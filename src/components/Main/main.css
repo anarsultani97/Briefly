@@ -6,7 +6,9 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
+.my-5{
+    margin: 0rem 0 auto!important;
+}
 #upload_button:hover {
     background-color: #00b28f;
 }
@@ -16,5 +18,18 @@
     font-family: Calibri;
     color: #8e8e8e;
 }
-
-
+.summarize-message{
+    color: #1e7e34;
+    text-align: center;
+}
+@media only screen and (min-width:1000px ) {
+    .summarize-message{
+        position: absolute;
+        top: -50px;
+        left:0;
+        right:0;
+    }
+}
+.result-area{
+ border: 2px solid #228b22 ;
+}

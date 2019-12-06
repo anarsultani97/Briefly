@@ -29,25 +29,24 @@ class Main extends React.Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-            this.setState(
-                {
-                    summarizeClicked : true
-                }
-            )
-        const  textObj = {
-            text : this.state.message
+        this.setState(
+            {
+                summarizeClicked: true
+            }
+        )
+        const textObj = {
+            text: this.state.message
         };
-         await axios.post('http://localhost:8080/api/data', textObj)
-            .then(res=> {
+        await axios.post('http://localhost:8080/api/data', textObj)
+            .then(res => {
                 console.log(res.data)
                 this.setState({
                     obj: res.data,
                     data: res.data.text
                 })
             });
-
-        console.log(this.state.data)
-
+        document.getElementById('main').className = "col-lg-6 col-sm-8 col-xs-8 text-center";
+        document.getElementById('main-form').className = "col-lg-6";
     }
 
 
@@ -55,8 +54,6 @@ class Main extends React.Component {
         const realFile = this.realFileBtn.current;
         realFile.click();
     };
-
-
         ShowUploadFileName = async (event) => {
             const realFileBtn = this.realFileBtn.current;
             const customTxt = this.customTxt.current;
@@ -91,7 +88,6 @@ class Main extends React.Component {
     textChangeHandler  = (event) =>{
         this.setState({
             message: event.target.value,
-            data: event.target.value
         })
     }
 
@@ -100,7 +96,7 @@ class Main extends React.Component {
             <section className="main">
                 <div className="container ">
                     <div className="row align-items-center">
-                        <div className="col-lg-8 offset-md-2 col-sm-8 col-xs-8 text-center">
+                        <div className="col-lg-8 offset-md-2 col-sm-8 col-xs-8 text-center" id="main">
                             <input type="file" id="upload_file" hidden="hidden" ref={this.realFileBtn}
                                    onChange={this.ShowUploadFileName} accept='.txt'/>
                             <button type="button" id="upload_button" className='btn--animated' ref={this.customBtn}
@@ -111,24 +107,13 @@ class Main extends React.Component {
                             <p className='mt-3'>You can only upload files <b>(.txt)</b> </p>
                         </div>
                     </div>
-                    <div className="row justify-content-md-center text-center my-5">
-                        <div className="col-lg-8">
+                    <div className="row text-center my-5">
+                        <div className="col-lg-8 offset-md-2" id='main-form'>
                             <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
-                                {
-                                    this.state.summarizeClicked ?
-                                    <Respond
-                                     rate = {this.state.obj.compressionRate}
-                                     words = {this.state.obj.nofWordsSummary}
-                                     summerized_text = {this.state.obj.text}
-                                     /* paragraph = {this.state.obj.nofParagraphSummary} */
-                                    />
-                                    :
-                                        <div></div>
 
-                                }
                                 <textarea placeholder='Summerize your text' name="summarize"
-                                          className='form-control rounded-lg' rows={15} id="textArea" ref={this.message}  onChange={this.textChangeHandler} value={this.state.data} />
+                                          className='form-control rounded-lg' rows={15} id="textArea" ref={this.message}  onChange={this.textChangeHandler} value={this.state.message} />
                                 <button type='submit' className="btn btn-lg btn-outline-light btn--green btn--animated"
                                         href="#"
                                         role="button">Summarize
@@ -136,6 +121,22 @@ class Main extends React.Component {
                             </div>
                             </form>
                         </div>
+                        <div className="col-lg-6 text-center" id='result-summarize'>
+                            {/*Summarized TextArea and analyze */}
+
+                            {
+                                this.state.summarizeClicked ?
+                                    <Respond
+                                        rate = {this.state.obj.compressionRate}
+                                        words = {this.state.obj.nofWordsSummary}
+                                        summerized_text = {this.state.obj.text}
+                                        data = {this.state.data}
+                                    />
+                                    :
+                                    <div></div>
+                            }
+                        </div>
+
                     </div>
                 </div>
             </section>

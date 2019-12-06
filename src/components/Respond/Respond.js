@@ -16,16 +16,18 @@ class  Respond extends React.Component {
 
         document.body.removeChild(element);
     }
+
     handleClick = (event) => {
             this.download('summerized', this.props.summerized_text)
         }
-
 
     render(){
         return (
             <div className='text-center'>
                 <div className="result">
-                    <h4>Summerized succesfully </h4>
+                    <h4 className='summarize-message'>Summarized  successfully!</h4>
+                    <textarea placeholder='Summarized result' name="summarize"
+                              className='form-control rounded-lg result-area' rows={15} id="textArea"  value={this.props.data}/>
                     <ul className="container float">
                         <div className="col-md-12">
                             <li className="item"> Compression rate :  <b>{this.props.rate}</b> </li>
@@ -38,7 +40,7 @@ class  Respond extends React.Component {
                             className="btn btn-lg btn-outline-light btn--white download"
                             role='button'
                             >
-                        Download as .txt
+                        Download result as .txt
                     </button>
                 </div>
             </div>

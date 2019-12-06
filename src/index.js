@@ -8,6 +8,7 @@ import Header from "./components/Header/Header.js";
 import Main from "./components/Main/Main.js"
 import Footer from './components/Footer/Footer.js'
 import Contact from './components/Contact/Contact.js'
+import About from  './components/What_is_briefly/About_Briefly.js'
 
 // Creating a react component
 
@@ -20,6 +21,7 @@ const App = () => {
         <Navbar img={image}/>
         <Header/>
         <Main/>
+        <About/>
         <Contact/>
         <Footer/>
     </div>
@@ -30,4 +32,3 @@ ReactDOM.render(
     <App/>,
     document.getElementById('root')
 );
-

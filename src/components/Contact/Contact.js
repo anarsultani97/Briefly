@@ -3,6 +3,7 @@ import axios from 'axios';
 import './contact.css'
 
 
+
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +11,9 @@ class Contact extends React.Component {
             name: '',
             email: '',
             message: '' ,
-            contact: ''
+            contact: '',
+            messageStatus:'',
+            messageSent : false
         }
     }
 
@@ -38,17 +41,46 @@ class Contact extends React.Component {
 
 
 
-    handleSubmit = (event) => {
-       event.preventDefault();
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        global = this;
 
+        this.setState({
+                messageStatus: "Your message  has sent successfully!",
+                messageSent: true
+        });
+        setTimeout(function() {
+            global.setState({
+                name: '',
+                email: '',
+                message: '' ,
+                contact: '',
+                messageStatus:'',
+                messageSent: false
+            })
+        }, 2500);
+
+
+        const contact = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message,
+            phoneNumber: this.state.message
+        }
+
+        await axios.post('http://localhost:8080/message', contact)
+            .then(res => {
+                if (res.status == 200) {
+                    console.log("Your message has sent succesfully!")
+                }
+            });
     };
 
     render() {
         return (
             <section id='contact'>
                 <div className="container-fluid contact-form">
-                    <form onSubmit={this.handleSubmit}  >
-                        
+                    <form onSubmit={this.handleSubmit}>
                         <h3>Contact Us</h3>
                         <div className="row">
                             <div className="col-md-6">
@@ -71,6 +103,18 @@ class Contact extends React.Component {
                                 <div className='row'>
                                     <div className="col-md-6 offset-md-3 form-group text-center">
                                         <input type="submit" name="btnSubmit" className=" btn btn--blue btn--animated" value="Send Message" />
+
+                                    {
+                                        this.state.messageSent ?
+                                            <div className="alert alert-success my-5" role="alert">
+                                                <h6 className="alert-heading">{this.state.messageStatus}</h6>
+                                            </div>
+
+                                            :
+
+                                            <div></div>
+
+                                    }
                                     </div>
                                 </div>
                             </div>

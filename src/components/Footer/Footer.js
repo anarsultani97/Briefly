@@ -3,9 +3,9 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <footer class="page-footer font-small blue">
-            <div class="footer-copyright text-center py-4">
-                © 2019 <b>Briefly</b>
+        <footer className="page-footer font-small blue">
+            <div className="footer-copyright text-center py-4">
+                © 2019 <b>Briefly</b> | Developed by Briefly Team
             </div>
         </footer>
     )

@@ -10,7 +10,7 @@ const Header = props => {
                         <h2 className="display-4"><b>Summarize your articles.
                             Save your time!</b></h2>
                         <p className="lead">
-                            <a className="btn btn-lg btn-outline-light btn--white btn--animated" href="#" role="button">Click
+                            <a className="btn btn-lg btn-outline-light btn--white btn--animated" href="#main" role="button">Click
                                 to summarize</a>
                         </p>
                     </div>

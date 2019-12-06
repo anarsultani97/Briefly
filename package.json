@@ -7,11 +7,12 @@
     "pdfjs": "^2.3.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "reactjs-popup": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build appNpmBuild.dependsOn appNpmInstall\ncopyWebApp.dependsOn appNpmBuild\ncompileJava.dependsOn copyWebApp"  ,
+    "build": "react-scripts build appNpmBuild.dependsOn appNpmInstall\ncopyWebApp.dependsOn appNpmBuild\ncompileJava.dependsOn copyWebApp",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
